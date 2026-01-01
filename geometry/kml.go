@@ -72,13 +72,7 @@ func kmlEncodeGeom(e *xml.Encoder, geom *geos.Geom) error {
 		return kmlEncodeCoords(e, kmlLinearRingStartElement, geom)
 	case geos.TypeIDPolygon:
 		return kmlEncodePolygon(e, geom)
-	case geos.TypeIDMultiPoint:
-		fallthrough
-	case geos.TypeIDMultiLineString:
-		fallthrough
-	case geos.TypeIDMultiPolygon:
-		fallthrough
-	case geos.TypeIDGeometryCollection:
+	case geos.TypeIDMultiPoint, geos.TypeIDMultiLineString, geos.TypeIDMultiPolygon, geos.TypeIDGeometryCollection:
 		return kmlEncodeMultiGeometry(e, geom)
 	default:
 		return fmt.Errorf("unsupported type: %s", geom.Type())

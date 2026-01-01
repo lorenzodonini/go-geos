@@ -13,6 +13,7 @@ linters:
   - dogsled
   - dupword
   - durationcheck
+  - embeddedstructfieldcheck
   - err113
   - errchkjson
   - errname
@@ -35,10 +36,12 @@ linters:
   - inamedparam
   - interfacebloat
   - intrange
+  - iotamixing
   - loggercheck
   - makezero
   - mirror
   - misspell
+  - modernize
   - nilerr
   - nilnesserr
   - noctx
@@ -103,7 +106,6 @@ linters:
   - tparallel
   - varnamelen
   - wrapcheck
-  - wsl
   - wsl_v5
   settings:
     forbidigo:
@@ -137,6 +139,8 @@ linters:
       - name: cognitive-complexity
         disabled: true
       - name: cyclomatic
+        disabled: true
+      - name: deep-exit
         disabled: true
       - name: empty-block
         disabled: true
